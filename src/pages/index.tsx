@@ -1,4 +1,5 @@
 import Head from "next/head";
+import ThemeToggle from "~/components/ThemeToggle/ThemeToggle";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
           Giftstorming Ai
         </div>
         <div className="font-lato">Giftstorming Ai</div>
+        <ThemeToggle />
       </main>
     </>
   );

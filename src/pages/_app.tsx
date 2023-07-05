@@ -4,6 +4,7 @@ import { type AppType } from "next/app";
 import { api } from "~/utils/api";
 import "~/styles/globals.css";
 import { Montserrat, Lato } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -30,7 +31,9 @@ const MyApp: AppType<{ session: Session | null }> = ({
           }
         `}
       </style>
-      <Component {...pageProps} />
+      <ThemeProvider enableSystem={true} attribute="class">
+        <Component {...pageProps} />
+      </ThemeProvider>
     </SessionProvider>
   );
 };
