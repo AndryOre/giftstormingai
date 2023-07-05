@@ -5,6 +5,7 @@ import { api } from "~/utils/api";
 import "~/styles/globals.css";
 import { Montserrat, Lato } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import { appWithTranslation } from "next-i18next";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -38,4 +39,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
   );
 };
 
-export default api.withTRPC(MyApp);
+const i18nApp = appWithTranslation(MyApp);
+const TRPCApp = api.withTRPC(i18nApp);
+
+export default TRPCApp;
