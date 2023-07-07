@@ -39,37 +39,49 @@ const Home: NextPage = () => {
           <div>{t("testi18n")}</div>
           <div>
             <Button variant="text" size="sm">
-              Text Small
+              Get Early Access
             </Button>
           </div>
 
           <div>
-            <Button variant="text" size="md" startIcon={<Heart />}>
-              Text Medium with Start Icon
+            <Button variant="text" size="md">
+              Get Early Access
             </Button>
           </div>
 
           <div>
-            <Button variant="text" size="lg" endIcon={<Heart />}>
-              Text Large with End Icon
+            <Button variant="text" size="lg">
+              Get Early Access
+            </Button>
+          </div>
+
+          <div>
+            <Button variant="text" size="sm" endIcon={<Heart />}>
+              Get Early Access
             </Button>
           </div>
 
           <div>
             <Button variant="outlined" size="sm">
-              Outlined Small
+              Get Early Access
             </Button>
           </div>
 
           <div>
-            <Button variant="outlined" size="md" startIcon={<Heart />}>
-              Outlined Medium with Start Icon
+            <Button variant="outlined" size="md">
+              Get Early Access
             </Button>
           </div>
 
           <div>
-            <Button variant="outlined" size="lg" endIcon={<Heart />}>
-              Outlined Large with End Icon
+            <Button variant="outlined" size="lg">
+              Get Early Access
+            </Button>
+          </div>
+
+          <div>
+            <Button variant="outlined" size="sm" endIcon={<Heart />}>
+              Get Early Access
             </Button>
           </div>
 
@@ -80,25 +92,49 @@ const Home: NextPage = () => {
           </div>
 
           <div>
-            <Button variant="contained" size="md" startIcon={<Heart />}>
-              Contained Medium with Start Icon
+            <Button variant="contained" size="md">
+              Get Early Access
             </Button>
           </div>
 
           <div>
-            <Button variant="contained" size="lg" endIcon={<Heart />}>
-              Contained Large with End Icon
+            <Button variant="contained" size="lg">
+              Get Early Access
             </Button>
           </div>
 
           <div>
-            <Button variant="contained" size="lg" disabled>
-              Disabled Contained Large
+            <Button variant="contained" size="sm" startIcon={<Heart />}>
+              Get Early Access
             </Button>
           </div>
 
-          <Button variant="contained" size="md" fullWidth>
-            Full Width Contained Medium
+          <div>
+            <Button variant="text" size="sm" disabled>
+              Get Early Access
+            </Button>
+          </div>
+
+          <div>
+            <Button variant="outlined" size="sm" disabled>
+              Get Early Access
+            </Button>
+          </div>
+
+          <div>
+            <Button variant="contained" size="sm" disabled>
+              Get Early Access
+            </Button>
+          </div>
+
+          <Button variant="text" size="sm" fullWidth>
+            Get Early Access
+          </Button>
+          <Button variant="outlined" size="sm" fullWidth>
+            Get Early Access
+          </Button>
+          <Button variant="contained" size="sm" fullWidth>
+            Get Early Access
           </Button>
         </div>
         <div className="flex flex-col items-center justify-center gap-2 p-4">
