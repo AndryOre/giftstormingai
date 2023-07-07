@@ -6,10 +6,21 @@ import ThemeToggle from "~/components/ThemeToggle/ThemeToggle";
 import LangDropdown from "~/components/LangDropdown/LangDropdown";
 import Footer from "~/components/Footer/Footer";
 import Button from "~/components/Button/Button";
+import Input from "~/components/Input/Input";
+import { useState } from "react";
 import { Heart } from "@phosphor-icons/react";
 
 const Home: NextPage = () => {
   const { t } = useTranslation("common");
+
+  const [value1, setValue1] = useState("");
+  const [value2, setValue2] = useState("");
+  const [value3, setValue3] = useState("");
+  const [value4, setValue4] = useState("");
+  const [value5, setValue5] = useState("");
+  const [value6, setValue6] = useState("");
+  const [value7, setValue7] = useState("");
+  const [value8, setValue8] = useState("");
 
   return (
     <>
@@ -89,6 +100,64 @@ const Home: NextPage = () => {
           <Button variant="contained" size="md" fullWidth>
             Full Width Contained Medium
           </Button>
+        </div>
+        <div className="flex flex-col items-center justify-center gap-2 p-4">
+          <Input
+            value={value1}
+            onChange={(e) => setValue1(e.target.value)}
+            placeholder="Text Small"
+          />
+
+          <Input
+            type="email"
+            value={value2}
+            onChange={(e) => setValue2(e.target.value)}
+            placeholder="Enter your email"
+          />
+
+          <Input
+            type="password"
+            value={value3}
+            onChange={(e) => setValue3(e.target.value)}
+            placeholder="Password input"
+          />
+
+          <Input
+            type="number"
+            value={value4}
+            onChange={(e) => setValue4(e.target.value)}
+            placeholder="Number input"
+          />
+
+          <Input
+            value={value5}
+            onChange={(e) => setValue5(e.target.value)}
+            placeholder="Text with Start Icon"
+            startIcon={<Heart />}
+          />
+
+          <Input
+            value={value6}
+            onChange={(e) => setValue6(e.target.value)}
+            placeholder="Text with End Icon"
+            endIcon={<Heart />}
+          />
+
+          <Input
+            value={value7}
+            onChange={(e) => setValue7(e.target.value)}
+            placeholder="Password with Start and End Icons"
+            type="password"
+            startIcon={<Heart weight="fill" />}
+            endIcon={<Heart />}
+          />
+
+          <Input
+            value={value8}
+            onChange={(e) => setValue8(e.target.value)}
+            placeholder="Disabled Input"
+            disabled
+          />
         </div>
         <Footer />
       </main>
