@@ -2,7 +2,7 @@ import { GithubLogo, Heart } from "@phosphor-icons/react";
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col justify-center gap-2 px-5 py-3 text-center font-lato text-neutral-200 lg:flex-row lg:justify-between">
+    <footer className="flex flex-col justify-center gap-2 px-5 py-3 text-center font-lato text-neutral-800 dark:text-neutral-200 lg:flex-row lg:justify-between">
       <div>
         <a
           href="https://github.com/AndryOre/giftstormingai"
@@ -11,7 +11,11 @@ export default function Footer() {
           className="flex items-center justify-center gap-2 lg:justify-start"
         >
           <span>Star on GitHub</span>
-          <GithubLogo weight="regular" size={24} className="text-neutral-100" />
+          <GithubLogo
+            weight="regular"
+            size={24}
+            className="text-neutral-900 dark:text-neutral-100"
+          />
         </a>
       </div>
       <div className="flex items-center justify-center gap-2 lg:justify-end">
