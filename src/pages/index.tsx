@@ -9,6 +9,7 @@ import Button from "~/components/Button/Button";
 import Input from "~/components/Input/Input";
 import { useState } from "react";
 import { Heart } from "@phosphor-icons/react";
+import StepCard from "~/components/Cards/StepCard/StepCard";
 
 const Home: NextPage = () => {
   const { t } = useTranslation("common");
@@ -193,6 +194,18 @@ const Home: NextPage = () => {
             onChange={(e) => setValue8(e.target.value)}
             placeholder="Disabled Input"
             disabled
+          />
+        </div>
+        <div className="flex flex-col gap-6 p-6">
+          <StepCard
+            step={1}
+            title="Step One Title"
+            description="Step one description."
+          />
+          <StepCard
+            step={2}
+            title="Step Two Title"
+            description="Step two description."
           />
         </div>
         <Footer />
