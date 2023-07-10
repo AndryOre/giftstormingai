@@ -1,7 +1,7 @@
 import type { ReactNode, MouseEventHandler, ButtonHTMLAttributes } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children: ReactNode;
+  children?: ReactNode;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   variant?: "text" | "outlined" | "contained";
   size?: "sm" | "md" | "lg";
@@ -9,6 +9,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   startIcon?: ReactNode;
   endIcon?: ReactNode;
   fullWidth?: boolean;
+  iconOnly?: boolean;
 }
 
 function Button({
@@ -20,22 +21,25 @@ function Button({
   startIcon,
   endIcon,
   fullWidth = false,
+  iconOnly = false,
   ...rest
 }: ButtonProps) {
-  let paddingClasses, textClasses, colorClasses;
+  let paddingClasses, colorClasses;
+  const textClasses = iconOnly ? "" : "text-md";
 
-  switch (size) {
-    case "md":
-      paddingClasses = "px-4 py-2";
-      textClasses = "text-lg";
-      break;
-    case "lg":
-      paddingClasses = "px-6 py-3";
-      textClasses = "text-xl";
-      break;
-    default:
-      paddingClasses = "px-2 py-1";
-      textClasses = "text-base";
+  if (iconOnly) {
+    paddingClasses = "p-2";
+  } else {
+    switch (size) {
+      case "md":
+        paddingClasses = "px-4 py-2";
+        break;
+      case "lg":
+        paddingClasses = "px-6 py-3";
+        break;
+      default:
+        paddingClasses = "px-2 py-1";
+    }
   }
 
   switch (variant) {
@@ -64,9 +68,13 @@ function Button({
       disabled={disabled}
       {...rest}
     >
-      {startIcon && <span className="mr-2">{startIcon}</span>}
-      {children}
-      {endIcon && <span className="ml-2">{endIcon}</span>}
+      {startIcon && (
+        <span className={`${iconOnly ? "" : "mr-2"}`}>{startIcon}</span>
+      )}
+      {!iconOnly && children}
+      {endIcon && (
+        <span className={`${iconOnly ? "" : "ml-2"}`}>{endIcon}</span>
+      )}
     </button>
   );
 }

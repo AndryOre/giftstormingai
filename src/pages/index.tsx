@@ -40,9 +40,30 @@ const Home: NextPage = () => {
         <div className="flex flex-col items-center justify-center gap-2 p-4">
           <div>{t("testi18n")}</div>
           <div>
-            <Button variant="text" size="sm">
-              Get Early Access
-            </Button>
+            <Button
+              variant="text"
+              size="sm"
+              startIcon={<Heart />}
+              iconOnly
+            ></Button>
+          </div>
+
+          <div>
+            <Button
+              variant="outlined"
+              size="sm"
+              startIcon={<Heart />}
+              iconOnly
+            ></Button>
+          </div>
+
+          <div>
+            <Button
+              variant="contained"
+              size="sm"
+              startIcon={<Heart />}
+              iconOnly
+            ></Button>
           </div>
 
           <div>
@@ -109,6 +130,16 @@ const Home: NextPage = () => {
             <Button variant="contained" size="sm" startIcon={<Heart />}>
               Get Early Access
             </Button>
+          </div>
+
+          <div>
+            <Button
+              variant="contained"
+              size="sm"
+              startIcon={<Heart />}
+              iconOnly
+              disabled
+            ></Button>
           </div>
 
           <div>
