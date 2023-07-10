@@ -28,13 +28,17 @@ const LangDropdown = () => {
           <div className="dark:shadow-[0 1px 2px 0 rgba(255,255,255,0.05)] absolute right-0 z-10 mt-1 rounded border border-neutral-200 bg-neutral-100 py-1 shadow-sm dark:border-neutral-800 dark:bg-neutral-900">
             <ul className="font-lato font-bold">
               <li
-                className="cursor-pointer px-2 hover:bg-neutral-200 hover:dark:bg-neutral-800"
+                className={`cursor-pointer px-2 hover:bg-neutral-200 hover:dark:bg-neutral-800 ${
+                  router.locale === "en" ? "text-blue-500" : ""
+                }`}
                 onClick={() => changeLanguage("en")}
               >
                 <a>English</a>
               </li>
               <li
-                className="cursor-pointer px-2 hover:bg-neutral-200 hover:dark:bg-neutral-800"
+                className={`cursor-pointer px-2 hover:bg-neutral-200 hover:dark:bg-neutral-800 ${
+                  router.locale === "es" ? "text-blue-500" : ""
+                }`}
                 onClick={() => changeLanguage("es")}
               >
                 <a>Spanish</a>
