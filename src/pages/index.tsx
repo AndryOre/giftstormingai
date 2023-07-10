@@ -10,6 +10,7 @@ import Input from "~/components/Input/Input";
 import { useState } from "react";
 import { Heart } from "@phosphor-icons/react";
 import StepCard from "~/components/Cards/StepCard/StepCard";
+import FeatureCard from "~/components/Cards/FeatureCard/FeatureCard";
 
 const Home: NextPage = () => {
   const { t } = useTranslation("common");
@@ -206,6 +207,20 @@ const Home: NextPage = () => {
             step={2}
             title="Step Two Title"
             description="Step two description."
+          />
+        </div>
+        <div className="flex flex-col gap-6 p-6">
+          <FeatureCard
+            icon={<Heart />}
+            title="Some Title"
+            description="Some description text..."
+            color="red"
+          />
+          <FeatureCard
+            icon={<Heart />}
+            title="Some Title"
+            description="Some description text..."
+            color="yellow"
           />
         </div>
         <Footer />
