@@ -2,8 +2,6 @@ import Head from "next/head";
 import type { NextPage, GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import ThemeToggle from "~/components/ThemeToggle/ThemeToggle";
-import LangDropdown from "~/components/LangDropdown/LangDropdown";
 import Footer from "~/components/Footer/Footer";
 import Button from "~/components/Button/Button";
 import Input from "~/components/Input/Input";
@@ -11,6 +9,7 @@ import { useState } from "react";
 import { Heart } from "@phosphor-icons/react";
 import StepCard from "~/components/Cards/StepCard/StepCard";
 import FeatureCard from "~/components/Cards/FeatureCard/FeatureCard";
+import Navbar from "~/components/Navbar/Navbar";
 
 const Home: NextPage = () => {
   const { t } = useTranslation("common");
@@ -32,11 +31,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className="font-montserrat text-xl font-bold">GiftstormingAi</div>
-        <div className="flex justify-end gap-2 p-8">
-          <LangDropdown />
-          <ThemeToggle />
-        </div>
+        <Navbar />
         <div className="flex flex-col items-center justify-center gap-2 p-4">
           <div>{t("testi18n")}</div>
           <div>
