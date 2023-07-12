@@ -1,8 +1,10 @@
 import { GithubLogo, Heart } from "@phosphor-icons/react";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import LangDropdown from "../LangDropdown/LangDropdown";
+import { useTranslation } from "next-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation("common");
   return (
     <footer className="flex flex-col gap-2 px-5 py-3 font-lato text-neutral-800 dark:text-neutral-200 lg:px-24 lg:py-6">
       <div className="flex flex-col items-center gap-1 lg:flex-row lg:justify-between">
@@ -13,14 +15,14 @@ export default function Footer() {
             rel="noreferrer"
             className="flex items-center justify-center gap-2 text-neutral-900 hover:text-red-500 dark:text-neutral-100 dark:hover:text-red-500 lg:justify-start"
           >
-            <span>Star on GitHub</span>
+            <span>{t("star_on_github")}</span>
             <GithubLogo weight="regular" size={24} />
           </a>
         </div>
         <div className="flex items-center justify-center gap-2 lg:justify-end">
-          <span>Built with</span>
+          <span>{t("built_with")}</span>
           <Heart weight="fill" size={24} className="text-red-500" />
-          <span>by</span>
+          <span>{t("by_AndryOre")}</span>
           <a
             href="https://twitter.com/AndryOre"
             target="_blank"
