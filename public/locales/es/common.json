@@ -1,3 +1,12 @@
 {
-  "testi18n": "Probar i18n"
+  "home": "Inicio",
+  "how_it_works": "Cómo funciona",
+  "features": "Características",
+  "get_early_access": "Obtener Acceso Temprano",
+  "discover_perfect_gift_start": "Descubre el ",
+  "perfect_gift": "Regalo Perfecto ",
+  "discover_perfect_gift_end": "a través de la ",
+  "ai": "IA",
+  "storm_of_gift_ideas": "Una tormenta de ideas de regalos personalizados a tu alcance",
+  "enter_email": "Ingresa tu correo electrónico"
 }

@@ -1,3 +1,12 @@
 {
-  "testi18n": "Test i18n"
+  "home": "Home",
+  "how_it_works": "How it works",
+  "features": "Features",
+  "get_early_access": "Get Early Access",
+  "discover_perfect_gift_start": "Discover the ",
+  "perfect_gift": "Perfect Gift ",
+  "discover_perfect_gift_end": "through ",
+  "ai": "AI",
+  "storm_of_gift_ideas": "A storm of personalized gift ideas at your fingertips",
+  "enter_email": "Enter your email"
 }

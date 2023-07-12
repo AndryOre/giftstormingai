@@ -2,27 +2,26 @@ import Head from "next/head";
 import type { NextPage, GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import Footer from "~/components/Footer/Footer";
-import Button from "~/components/Button/Button";
-import Input from "~/components/Input/Input";
 import { useState } from "react";
-import { Heart } from "@phosphor-icons/react";
+import Navbar from "~/components/Navbar/Navbar";
+import Input from "~/components/Input/Input";
+import Button from "~/components/Button/Button";
+import {
+  Play,
+  CursorClick,
+  Gift,
+  Translate,
+  Sun,
+  Heart,
+} from "@phosphor-icons/react";
 import StepCard from "~/components/Cards/StepCard/StepCard";
 import FeatureCard from "~/components/Cards/FeatureCard/FeatureCard";
-import Navbar from "~/components/Navbar/Navbar";
+import Footer from "~/components/Footer/Footer";
 
 const Home: NextPage = () => {
   const { t } = useTranslation("common");
 
-  const [value1, setValue1] = useState("");
-  const [value2, setValue2] = useState("");
-  const [value3, setValue3] = useState("");
-  const [value4, setValue4] = useState("");
-  const [value5, setValue5] = useState("");
-  const [value6, setValue6] = useState("");
-  const [value7, setValue7] = useState("");
-  const [value8, setValue8] = useState("");
-
+  const [email, setEmail] = useState("");
   return (
     <>
       <Head>
@@ -32,223 +31,53 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <Navbar />
-        <div className="flex flex-col items-center justify-center gap-2 p-4">
-          <div>{t("testi18n")}</div>
-          <div>
-            <Button
-              variant="text"
-              size="sm"
-              startIcon={<Heart />}
-              iconOnly
-            ></Button>
+        <section className="flex flex-col items-center justify-center gap-8 px-6 py-10 text-center lg:flex-row lg:items-start lg:justify-between lg:px-24 lg:text-left">
+          <div className="flex flex-col gap-6 lg:mt-8 lg:gap-10">
+            <div className="flex flex-col gap-4 lg:text-lg">
+              <h1 className="font-montserrat text-3xl font-bold lg:text-5xl">
+                <span className="bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50">
+                  {t("discover_perfect_gift_start")}
+                </span>
+                <span className="bg-gradient-to-t from-red-500 to-red-500/50 bg-clip-text text-transparent dark:bg-gradient-to-b">
+                  {t("perfect_gift")}
+                </span>
+                <span className="bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50">
+                  {t("discover_perfect_gift_end")}
+                </span>
+                <span className="bg-gradient-to-t from-red-500 to-red-500/50 bg-clip-text text-transparent dark:bg-gradient-to-b">
+                  {t("ai")}
+                </span>
+              </h1>
+              <p className="font-lato text-neutral-800 dark:text-neutral-200">
+                {t("storm_of_gift_ideas")}
+              </p>
+            </div>
+            <div className="flex flex-col items-center gap-4 lg:flex-row">
+              <div className="w-full lg:w-auto">
+                <Input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder={t("enter_email")}
+                />
+              </div>
+              <div>
+                <Button variant="contained" size="md">
+                  {t("get_early_access")}
+                </Button>
+              </div>
+            </div>
           </div>
-
-          <div>
-            <Button
-              variant="outlined"
-              size="sm"
-              startIcon={<Heart />}
-              iconOnly
-            ></Button>
+          <div className="flex aspect-video w-full items-center justify-center rounded border border-neutral-400 bg-neutral-200 shadow dark:border-neutral-600 dark:bg-neutral-800 dark:shadow-[0px_1px_3px_rgba(255,255,255,0.1),0px_1px_2px_-1px_rgba(255,255,255,0.1)] lg:max-w-[50%]">
+            <video controls className="rounded ">
+              <source
+                src="https://res.cloudinary.com/dhwxnbnaj/video/upload/v1689133535/Rick_Rolled_dojqni.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
           </div>
-
-          <div>
-            <Button
-              variant="contained"
-              size="sm"
-              startIcon={<Heart />}
-              iconOnly
-            ></Button>
-          </div>
-
-          <div>
-            <Button variant="text" size="md">
-              Get Early Access
-            </Button>
-          </div>
-
-          <div>
-            <Button variant="text" size="lg">
-              Get Early Access
-            </Button>
-          </div>
-
-          <div>
-            <Button variant="text" size="sm" endIcon={<Heart />}>
-              Get Early Access
-            </Button>
-          </div>
-
-          <div>
-            <Button variant="outlined" size="sm">
-              Get Early Access
-            </Button>
-          </div>
-
-          <div>
-            <Button variant="outlined" size="md">
-              Get Early Access
-            </Button>
-          </div>
-
-          <div>
-            <Button variant="outlined" size="lg">
-              Get Early Access
-            </Button>
-          </div>
-
-          <div>
-            <Button variant="outlined" size="sm" endIcon={<Heart />}>
-              Get Early Access
-            </Button>
-          </div>
-
-          <div>
-            <Button variant="contained" size="sm">
-              Get Early Access
-            </Button>
-          </div>
-
-          <div>
-            <Button variant="contained" size="md">
-              Get Early Access
-            </Button>
-          </div>
-
-          <div>
-            <Button variant="contained" size="lg">
-              Get Early Access
-            </Button>
-          </div>
-
-          <div>
-            <Button variant="contained" size="sm" startIcon={<Heart />}>
-              Get Early Access
-            </Button>
-          </div>
-
-          <div>
-            <Button
-              variant="contained"
-              size="sm"
-              startIcon={<Heart />}
-              iconOnly
-              disabled
-            ></Button>
-          </div>
-
-          <div>
-            <Button variant="text" size="sm" disabled>
-              Get Early Access
-            </Button>
-          </div>
-
-          <div>
-            <Button variant="outlined" size="sm" disabled>
-              Get Early Access
-            </Button>
-          </div>
-
-          <div>
-            <Button variant="contained" size="sm" disabled>
-              Get Early Access
-            </Button>
-          </div>
-
-          <Button variant="text" size="sm" fullWidth>
-            Get Early Access
-          </Button>
-          <Button variant="outlined" size="sm" fullWidth>
-            Get Early Access
-          </Button>
-          <Button variant="contained" size="sm" fullWidth>
-            Get Early Access
-          </Button>
-        </div>
-        <div className="flex flex-col items-center justify-center gap-2 p-4">
-          <Input
-            value={value1}
-            onChange={(e) => setValue1(e.target.value)}
-            placeholder="Text Small"
-          />
-
-          <Input
-            type="email"
-            value={value2}
-            onChange={(e) => setValue2(e.target.value)}
-            placeholder="Enter your email"
-          />
-
-          <Input
-            type="password"
-            value={value3}
-            onChange={(e) => setValue3(e.target.value)}
-            placeholder="Password input"
-          />
-
-          <Input
-            type="number"
-            value={value4}
-            onChange={(e) => setValue4(e.target.value)}
-            placeholder="Number input"
-          />
-
-          <Input
-            value={value5}
-            onChange={(e) => setValue5(e.target.value)}
-            placeholder="Text with Start Icon"
-            startIcon={<Heart />}
-          />
-
-          <Input
-            value={value6}
-            onChange={(e) => setValue6(e.target.value)}
-            placeholder="Text with End Icon"
-            endIcon={<Heart />}
-          />
-
-          <Input
-            value={value7}
-            onChange={(e) => setValue7(e.target.value)}
-            placeholder="Password with Start and End Icons"
-            type="password"
-            startIcon={<Heart weight="fill" />}
-            endIcon={<Heart />}
-          />
-
-          <Input
-            value={value8}
-            onChange={(e) => setValue8(e.target.value)}
-            placeholder="Disabled Input"
-            disabled
-          />
-        </div>
-        <div className="flex flex-col gap-6 p-6">
-          <StepCard
-            step={1}
-            title="Step One Title"
-            description="Step one description."
-          />
-          <StepCard
-            step={2}
-            title="Step Two Title"
-            description="Step two description."
-          />
-        </div>
-        <div className="flex flex-col gap-6 p-6">
-          <FeatureCard
-            icon={<Heart />}
-            title="Some Title"
-            description="Some description text..."
-            color="red"
-          />
-          <FeatureCard
-            icon={<Heart />}
-            title="Some Title"
-            description="Some description text..."
-            color="yellow"
-          />
-        </div>
+        </section>
         <Footer />
       </main>
     </>
