@@ -2,16 +2,38 @@ import { useEffect, useState } from "react";
 import Button from "../Button/Button";
 import { List, X } from "@phosphor-icons/react";
 import { useTranslation } from "next-i18next";
-import { useRouter } from "next/router";
 
 function Navbar() {
   const { t } = useTranslation("common");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const router = useRouter();
+  const [activeSection, setActiveSection] = useState("");
 
   const handleMenuClick = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const handleScroll = () => {
+    const sections = ["home", "how-it-works", "features"];
+    const scrollY = window.scrollY;
+
+    const currentSection = sections.find((section) => {
+      const element = document.querySelector(`#${section}`);
+      if (element) {
+        const top = (element as HTMLElement).offsetTop - 100;
+        const bottom = top + (element as HTMLElement).offsetHeight;
+        return scrollY >= top && scrollY <= bottom;
+      } else {
+        return false;
+      }
+    });
+
+    setActiveSection(currentSection || "");
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -41,21 +63,31 @@ function Navbar() {
           <div className="flex justify-center gap-8">
             <a
               href="#"
-              className={router.pathname === "/" ? "text-red-500" : ""}
+              className={`${
+                activeSection === ""
+                  ? "text-red-500"
+                  : "transform transition-all duration-300 hover:-translate-y-1 hover:text-red-500"
+              }`}
             >
               {t("home")}
             </a>
             <a
               href="#how-it-works"
-              className={
-                router.pathname === "/how-it-works" ? "text-red-500" : ""
-              }
+              className={`${
+                activeSection === "how-it-works"
+                  ? "text-red-500"
+                  : "transform transition-all duration-300 hover:-translate-y-1 hover:text-red-500"
+              }`}
             >
               {t("how_it_works")}
             </a>
             <a
               href="#features"
-              className={router.pathname === "/features" ? "text-red-500" : ""}
+              className={`${
+                activeSection === "features"
+                  ? "text-red-500"
+                  : "transform transition-all duration-300 hover:-translate-y-1 hover:text-red-500"
+              }`}
             >
               {t("features")}
             </a>
@@ -82,20 +114,18 @@ function Navbar() {
       </div>
       {isMenuOpen && (
         <div className="fixed left-0 top-14 z-10 flex h-full w-full flex-col items-center justify-start gap-6 bg-neutral-50 px-5 py-4 font-lato dark:bg-neutral-950 lg:hidden">
-          <a href="#" className={router.pathname === "/" ? "text-red-500" : ""}>
+          <a href="#" className={activeSection === "" ? "text-red-500" : ""}>
             {t("home")}
           </a>
           <a
             href="#how-it-works"
-            className={
-              router.pathname === "/how-it-works" ? "text-red-500" : ""
-            }
+            className={activeSection === "how-it-works" ? "text-red-500" : ""}
           >
             {t("how_it_works")}
           </a>
           <a
             href="#features"
-            className={router.pathname === "/features" ? "text-red-500" : ""}
+            className={activeSection === "features" ? "text-red-500" : ""}
           >
             {t("features")}
           </a>
