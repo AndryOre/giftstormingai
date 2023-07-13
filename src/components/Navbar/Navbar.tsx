@@ -94,7 +94,16 @@ function Navbar() {
           </div>
         </div>
         <div className="hidden lg:block">
-          <Button variant="contained" size="md">
+          <Button
+            variant="contained"
+            size="md"
+            onClick={() =>
+              window.open(
+                "https://giftstorming-ai.beehiiv.com/subscribe",
+                "_blank"
+              )
+            }
+          >
             {t("get_early_access")}
           </Button>
         </div>
@@ -129,7 +138,17 @@ function Navbar() {
           >
             {t("features")}
           </a>
-          <Button variant="contained" size="lg" fullWidth>
+          <Button
+            variant="contained"
+            size="lg"
+            fullWidth
+            onClick={() =>
+              window.open(
+                "https://giftstorming-ai.beehiiv.com/subscribe",
+                "_blank"
+              )
+            }
+          >
             {t("get_early_access")}
           </Button>
         </div>
