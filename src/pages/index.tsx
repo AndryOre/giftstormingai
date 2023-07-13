@@ -32,7 +32,7 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <Navbar />
-        <section className="flex min-h-screen flex-col items-center justify-center gap-8 px-6 py-10 text-center lg:flex-row lg:items-start lg:justify-between lg:px-24 lg:py-32 lg:text-left">
+        <section className="flex flex-col items-center justify-center gap-8 px-6 py-10 text-center lg:min-h-screen lg:flex-row lg:items-start lg:justify-between lg:px-24 lg:py-32 lg:text-left">
           <div className="flex flex-col gap-6 lg:gap-10">
             <div className="flex flex-col gap-4 lg:text-lg">
               <div className="font-montserrat text-3xl font-bold lg:text-5xl">
@@ -81,7 +81,7 @@ const Home: NextPage = () => {
         </section>
         <section
           id="how-it-works"
-          className="flex min-h-screen flex-col items-center justify-center gap-8 px-6 py-10 text-center lg:px-24"
+          className="flex flex-col items-center justify-center gap-8 px-6 py-10 text-center lg:min-h-screen lg:px-24"
         >
           <SectionTitle title={t("how_it_works")} />
           <div className="flex flex-col gap-8 lg:gap-32">
@@ -109,7 +109,7 @@ const Home: NextPage = () => {
         </section>
         <section
           id="features"
-          className="flex min-h-screen flex-col items-center justify-center gap-8 px-6 py-10 text-center lg:px-24"
+          className="flex flex-col items-center justify-center gap-8 px-6 py-10 text-center lg:min-h-screen lg:px-24"
         >
           <SectionTitle title={t("features")} />
           <div className="flex flex-col gap-8 lg:gap-32">
