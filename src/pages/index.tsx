@@ -32,8 +32,8 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <Navbar />
-        <section className="flex flex-col items-center justify-center gap-8 px-6 py-10 text-center lg:flex-row lg:items-start lg:justify-between lg:px-24 lg:text-left">
-          <div className="flex flex-col gap-6 lg:mt-8 lg:gap-10">
+        <section className="flex min-h-screen flex-col items-center justify-center gap-8 px-6 py-10 text-center lg:flex-row lg:items-start lg:justify-between lg:px-24 lg:py-32 lg:text-left">
+          <div className="flex flex-col gap-6 lg:gap-10">
             <div className="flex flex-col gap-4 lg:text-lg">
               <div className="font-montserrat text-3xl font-bold lg:text-5xl">
                 <span className="bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50">
@@ -79,74 +79,84 @@ const Home: NextPage = () => {
             </video>
           </div>
         </section>
-        <section className="flex flex-col items-center justify-center gap-8 px-6 py-10 text-center lg:px-24">
+        <section
+          id="how-it-works"
+          className="flex min-h-screen flex-col items-center justify-center gap-8 px-6 py-10 text-center lg:px-24"
+        >
           <SectionTitle title={t("how_it_works")} />
-          <div className="flex w-full flex-col justify-center bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-center font-montserrat text-2xl font-bold text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50 lg:text-3xl">
-            {t("follow_simple_steps")}
-          </div>
-          <div className="flex flex-col gap-6 text-left lg:flex-row">
-            <StepCard
-              step={1}
-              title={t("tell_us_about_gift")}
-              description={t("who_is_lucky_one")}
-            />
-            <StepCard
-              step={2}
-              title={t("hit_magic_button")}
-              description={t("done_with_details")}
-            />
-            <StepCard
-              step={3}
-              title={t("get_your_personalized_gift_ideas")}
-              description={t("voila_gift_ideas")}
-            />
+          <div className="flex flex-col gap-8 lg:gap-32">
+            <div className="flex w-full flex-col justify-center bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-center font-montserrat text-2xl font-bold text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50 lg:text-4xl">
+              {t("follow_simple_steps")}
+            </div>
+            <div className="flex flex-col gap-6 text-left lg:flex-row">
+              <StepCard
+                step={1}
+                title={t("tell_us_about_gift")}
+                description={t("who_is_lucky_one")}
+              />
+              <StepCard
+                step={2}
+                title={t("hit_magic_button")}
+                description={t("done_with_details")}
+              />
+              <StepCard
+                step={3}
+                title={t("get_your_personalized_gift_ideas")}
+                description={t("voila_gift_ideas")}
+              />
+            </div>
           </div>
         </section>
-        <section className="flex flex-col items-center justify-center gap-8 px-6 py-10 text-center lg:px-24">
+        <section
+          id="features"
+          className="flex min-h-screen flex-col items-center justify-center gap-8 px-6 py-10 text-center lg:px-24"
+        >
           <SectionTitle title={t("features")} />
-          <div className="flex w-full flex-col justify-center bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-center font-montserrat text-2xl font-bold text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50 lg:text-3xl">
-            {t("explore_features")}
-          </div>
-          <div className="flex flex-col gap-6 text-left lg:flex-row">
-            <FeatureCard
-              icon={<CursorClick />}
-              title={t("easy_peasy")}
-              description={t("user_friendly_interface")}
-              color="yellow"
-            />
-            <FeatureCard
-              icon={<Gift />}
-              title={t("tailored_just_for_you")}
-              description={t("personalized_gift_ideas")}
-              color="green"
-            />
-            <FeatureCard
-              icon={<Translate />}
-              title={t("lost_in_translation")}
-              description={t("comfortable_in_english_or_spanish")}
-              color="blue"
-            />
-            <FeatureCard
-              icon={<Sun />}
-              title={t("day_or_night_we_got_the_look")}
-              description={t("choose_light_dark_theme")}
-              color="purple"
-            />
-            <FeatureCard
-              icon={<Heart />}
-              title={t("bookmark_your_faves")}
-              description={t("add_to_favorites")}
-              color="red"
-            />
+          <div className="flex flex-col gap-8 lg:gap-32">
+            <div className="flex w-full flex-col justify-center bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-center font-montserrat text-2xl font-bold text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50 lg:text-4xl">
+              {t("explore_features")}
+            </div>
+            <div className="flex flex-col gap-6 text-left lg:flex-row">
+              <FeatureCard
+                icon={<CursorClick />}
+                title={t("easy_peasy")}
+                description={t("user_friendly_interface")}
+                color="yellow"
+              />
+              <FeatureCard
+                icon={<Gift />}
+                title={t("tailored_just_for_you")}
+                description={t("personalized_gift_ideas")}
+                color="green"
+              />
+              <FeatureCard
+                icon={<Translate />}
+                title={t("lost_in_translation")}
+                description={t("comfortable_in_english_or_spanish")}
+                color="blue"
+              />
+              <FeatureCard
+                icon={<Sun />}
+                title={t("day_or_night_we_got_the_look")}
+                description={t("choose_light_dark_theme")}
+                color="purple"
+              />
+              <FeatureCard
+                icon={<Heart />}
+                title={t("bookmark_your_faves")}
+                description={t("add_to_favorites")}
+                color="red"
+              />
+            </div>
           </div>
         </section>
         <section className="flex flex-col items-center justify-center gap-8 px-6 py-10 text-center lg:px-24">
-          <div className="flex w-full flex-col items-center justify-center gap-4 rounded bg-gradient-to-bl from-red-500 to-red-600 p-6 shadow-[0px_2px_4px_-1px_rgba(239,68,68,0.06),0px_4px_6px_-1px_rgba(239,68,68,0.10)] lg:py-12">
-            <div className="flex flex-col font-montserrat text-2xl font-semibold text-neutral-50">
+          <div className="bg-pattern flex w-full flex-col items-center justify-center gap-4 rounded p-6 shadow-[0px_2px_4px_-1px_rgba(239,68,68,0.06),0px_4px_6px_-1px_rgba(239,68,68,0.10)] lg:py-12">
+            <div className="flex flex-col font-montserrat text-2xl font-semibold text-neutral-50 lg:text-3xl">
               <span>{t("ready_to_find_gift")}</span>
               <span>{t("start_now")}</span>
             </div>
-            <Button variant="contained" size="md">
+            <Button variant="contained" size="md" color="secondary">
               {t("get_early_access")}
             </Button>
           </div>
