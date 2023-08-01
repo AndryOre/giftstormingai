@@ -1,6 +1,4 @@
 import { GithubLogo, Heart } from "@phosphor-icons/react";
-import ThemeToggle from "../ThemeToggle/ThemeToggle";
-import LangDropdown from "../LangDropdown/LangDropdown";
 import { useTranslation } from "next-i18next";
 
 export default function Footer() {
@@ -32,10 +30,6 @@ export default function Footer() {
             AndryOre
           </a>
         </div>
-      </div>
-      <div className="flex justify-between">
-        <ThemeToggle />
-        <LangDropdown />
       </div>
     </footer>
   );

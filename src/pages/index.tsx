@@ -7,7 +7,6 @@ import Navbar from "~/components/Navbar/Navbar";
 import Input from "~/components/Input/Input";
 import Button from "~/components/Button/Button";
 import {
-  Play,
   CursorClick,
   Gift,
   Translate,
@@ -66,7 +65,7 @@ const Home: NextPage = () => {
         <section className="flex flex-col items-center justify-center gap-8 px-6 py-10 text-center lg:min-h-screen lg:flex-row lg:items-start lg:justify-between lg:px-24 lg:py-32 lg:text-left">
           <div className="flex flex-col gap-6 lg:gap-10">
             <div className="flex flex-col gap-4 lg:text-lg">
-              <div className="font-montserrat text-3xl font-bold lg:text-5xl">
+              <div className="font-montserrat text-3xl font-bold lg:text-5xl xl:text-6xl">
                 <span className="bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50">
                   {t("discover_perfect_gift_start")}
                 </span>
@@ -93,7 +92,17 @@ const Home: NextPage = () => {
                   placeholder={t("enter_email")}
                 />
               </div>
-              <div>
+              <div className="xl:hidden">
+                <Button
+                  variant="contained"
+                  onClick={() =>
+                    (window.location.href = `https://magic.beehiiv.com/v1/2ccc515f-1bc0-4eb2-9e0a-c8e714a8cbc8?email=${email}&redirect_to=https://giftstorming-ai.vercel.app/&utm_source=landing&utm_medium=hero&utm_campaign=early_access`)
+                  }
+                >
+                  {t("get_early_access")}
+                </Button>
+              </div>
+              <div className="hidden xl:block">
                 <Button
                   variant="contained"
                   size="md"
@@ -125,7 +134,7 @@ const Home: NextPage = () => {
         >
           <SectionTitle title={t("how_it_works")} />
           <div className="flex flex-col gap-8 lg:gap-32">
-            <div className="flex w-full flex-col justify-center bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-center font-montserrat text-2xl font-bold text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50 lg:text-4xl">
+            <div className="bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-center font-montserrat text-2xl font-bold text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50 lg:text-4xl">
               {t("follow_simple_steps")}
             </div>
             <div className="flex flex-col gap-6 text-left lg:flex-row">
@@ -153,7 +162,7 @@ const Home: NextPage = () => {
         >
           <SectionTitle title={t("features")} />
           <div className="flex flex-col gap-8 lg:gap-32">
-            <div className="flex w-full flex-col justify-center bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-center font-montserrat text-2xl font-bold text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50 lg:text-4xl">
+            <div className="bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-center font-montserrat text-2xl font-bold text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50 lg:text-4xl">
               {t("explore_features")}
             </div>
             <div className="flex flex-col gap-6 text-left lg:flex-row">

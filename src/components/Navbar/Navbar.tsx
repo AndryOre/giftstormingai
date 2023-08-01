@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import Button from "../Button/Button";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
+import LangDropdown from "../LangDropdown/LangDropdown";
 import { List, X } from "@phosphor-icons/react";
 import { useTranslation } from "next-i18next";
 
@@ -93,7 +95,11 @@ function Navbar() {
             </a>
           </div>
         </div>
-        <div className="hidden lg:block">
+        <div className="flex justify-between lg:hidden">
+          <ThemeToggle />
+          <LangDropdown />
+        </div>
+        <div className="hidden items-center gap-4 lg:inline-flex">
           <Button
             variant="contained"
             size="md"
@@ -106,6 +112,10 @@ function Navbar() {
           >
             {t("get_early_access")}
           </Button>
+          <div className="flex justify-between">
+            <ThemeToggle />
+            <LangDropdown />
+          </div>
         </div>
         <button
           onClick={handleMenuClick}

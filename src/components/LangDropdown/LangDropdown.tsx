@@ -25,7 +25,7 @@ const LangDropdown = () => {
           <Translate weight="regular" size={16} className="text-blue-500" />
         </button>
         {isOpen && (
-          <div className="dark:shadow-[0 1px 2px 0 rgba(255,255,255,0.05)] absolute bottom-full right-0 z-10 mb-1 rounded border border-neutral-200 bg-neutral-100 py-1 shadow-sm dark:border-neutral-800 dark:bg-neutral-900">
+          <div className="dark:shadow-[0 1px 2px 0 rgba(255,255,255,0.05)] absolute right-0 top-full z-10 mt-1 rounded border border-neutral-200 bg-neutral-100 py-1 shadow-sm dark:border-neutral-800 dark:bg-neutral-900">
             <ul className="text-left font-lato font-bold">
               <li
                 className={`cursor-pointer px-2 hover:bg-neutral-200 hover:dark:bg-neutral-800 ${
