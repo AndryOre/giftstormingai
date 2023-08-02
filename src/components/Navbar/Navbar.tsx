@@ -95,7 +95,7 @@ function Navbar() {
             </a>
           </div>
         </div>
-        <div className="flex justify-between lg:hidden">
+        <div className="flex gap-2 lg:hidden">
           <ThemeToggle />
           <LangDropdown />
         </div>
@@ -112,7 +112,7 @@ function Navbar() {
           >
             {t("get_early_access")}
           </Button>
-          <div className="flex justify-between">
+          <div className="flex gap-2">
             <ThemeToggle />
             <LangDropdown />
           </div>
