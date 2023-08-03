@@ -59,7 +59,12 @@ function Navbar() {
         }`}
       >
         <div className="font-montserrat text-xl font-bold lg:text-2xl">
-          Giftstorming Ai
+          <span className="bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50">
+            Giftstorming {""}
+          </span>
+          <span className="bg-gradient-to-t from-red-500 to-red-500/50 bg-clip-text text-transparent dark:bg-gradient-to-b">
+            Ai
+          </span>
         </div>
         <div className="hidden lg:flex lg:items-center lg:justify-between">
           <div className="flex justify-center gap-8">
