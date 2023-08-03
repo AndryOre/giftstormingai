@@ -65,19 +65,21 @@ const Home: NextPage = () => {
         <section className="flex flex-col items-center justify-center gap-8 px-6 py-10 text-center lg:min-h-screen lg:flex-row lg:items-start lg:justify-between lg:px-24 lg:py-32 lg:text-left">
           <div className="flex flex-col gap-6 lg:gap-10">
             <div className="flex flex-col gap-4 lg:text-lg">
-              <div className="font-montserrat text-3xl font-bold lg:text-5xl xl:text-6xl">
+              <div className="flex flex-col font-montserrat text-3xl font-bold lg:text-5xl xl:text-6xl">
                 <span className="bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50">
                   {t("discover_perfect_gift_start")}
                 </span>
                 <span className="bg-gradient-to-t from-red-500 to-red-500/50 bg-clip-text text-transparent dark:bg-gradient-to-b">
                   {t("perfect_gift")}
                 </span>
-                <span className="bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50">
-                  {t("discover_perfect_gift_end")}
-                </span>
-                <span className="bg-gradient-to-t from-red-500 to-red-500/50 bg-clip-text text-transparent dark:bg-gradient-to-b">
-                  {t("ai")}
-                </span>
+                <div>
+                  <span className="bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50">
+                    {t("discover_perfect_gift_end")}
+                  </span>
+                  <span className="bg-gradient-to-t from-red-500 to-red-500/50 bg-clip-text text-transparent dark:bg-gradient-to-b">
+                    {t("ai")}
+                  </span>
+                </div>
               </div>
               <div className="font-lato text-neutral-800 dark:text-neutral-200">
                 {t("storm_of_gift_ideas")}
@@ -124,7 +126,7 @@ const Home: NextPage = () => {
                 src="https://res.cloudinary.com/dhwxnbnaj/video/upload/v1689133535/Rick_Rolled_dojqni.mp4"
                 type="video/mp4"
               />
-              Your browser does not support the video tag.
+              {t("browser_does_not_support_video")}
             </video>
           </div>
         </section>
@@ -134,8 +136,10 @@ const Home: NextPage = () => {
         >
           <SectionTitle title={t("how_it_works")} />
           <div className="flex flex-col gap-8 lg:gap-32">
-            <div className="bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-center font-montserrat text-2xl font-bold text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50 lg:text-4xl">
-              {t("follow_simple_steps")}
+            <div className="flex flex-col bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-center font-montserrat text-2xl font-bold text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50 lg:gap-2 lg:text-4xl">
+              <span>{t("follow_simple_steps_part1")}</span>
+              <span>{t("follow_simple_steps_part2")}</span>
+              <span>{t("follow_simple_steps_part3")}</span>
             </div>
             <div className="flex flex-col gap-6 text-left lg:flex-row">
               <StepCard
@@ -162,8 +166,10 @@ const Home: NextPage = () => {
         >
           <SectionTitle title={t("features")} />
           <div className="flex flex-col gap-8 lg:gap-32">
-            <div className="bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-center font-montserrat text-2xl font-bold text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50 lg:text-4xl">
-              {t("explore_features")}
+            <div className="flex flex-col bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-center font-montserrat text-2xl font-bold text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50 lg:gap-2 lg:text-4xl">
+              <span>{t("explore_features_part1")}</span>
+              <span>{t("explore_features_part2")}</span>
+              <span>{t("explore_features_part3")}</span>
             </div>
             <div className="flex flex-col gap-6 text-left lg:flex-row">
               <FeatureCard
