@@ -123,7 +123,7 @@ const Home: NextPage = () => {
               loop
               muted
               playsInline
-              className="rounded border dark:shadow-[0px_1px_3px_rgba(255,255,255,0.1),0px_1px_2px_-1px_rgba(255,255,255,0.1)]"
+              className="rounded border border-transparent shadow-md dark:shadow-[0px_4px_6px_-1px_rgba(255,255,255,0.1),0px_2px_4px_-2px_rgba(255,255,255,0.1)]"
             >
               <source
                 src="https://res.cloudinary.com/dhwxnbnaj/video/upload/v1691197583/Giftstorming_Ai_Early_Access.mp4"
