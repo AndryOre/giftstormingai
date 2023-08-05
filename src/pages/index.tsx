@@ -41,7 +41,7 @@ const Home: NextPage = () => {
         />
         <meta
           property="og:image"
-          content="https://res.cloudinary.com/dhwxnbnaj/image/upload/v1681706326/bxnbnrp9wcim1hmizm78.png"
+          content="https://res.cloudinary.com/dhwxnbnaj/image/upload/v1691210624/Giftstorming_Ai_Thumbnail_fftdav.png"
         />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -57,7 +57,7 @@ const Home: NextPage = () => {
         />
         <meta
           name="twitter:image"
-          content="https://res.cloudinary.com/dhwxnbnaj/image/upload/v1681706326/bxnbnrp9wcim1hmizm78.png"
+          content="https://res.cloudinary.com/dhwxnbnaj/image/upload/v1691210624/Giftstorming_Ai_Thumbnail_fftdav.png"
         />
       </Head>
       <main>
