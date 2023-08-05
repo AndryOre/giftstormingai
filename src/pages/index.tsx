@@ -119,11 +119,14 @@ const Home: NextPage = () => {
           </div>
           <div className="flex aspect-video w-full items-center justify-center lg:max-w-[50%]">
             <video
-              controls
-              className="rounded border border-neutral-400 shadow dark:border-neutral-600 dark:shadow-[0px_1px_3px_rgba(255,255,255,0.1),0px_1px_2px_-1px_rgba(255,255,255,0.1)]"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="rounded border dark:shadow-[0px_1px_3px_rgba(255,255,255,0.1),0px_1px_2px_-1px_rgba(255,255,255,0.1)]"
             >
               <source
-                src="https://res.cloudinary.com/dhwxnbnaj/video/upload/v1689133535/Rick_Rolled_dojqni.mp4"
+                src="https://res.cloudinary.com/dhwxnbnaj/video/upload/v1691197583/Giftstorming_Ai_Early_Access.mp4"
                 type="video/mp4"
               />
               {t("browser_does_not_support_video")}
