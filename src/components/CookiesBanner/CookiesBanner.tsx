@@ -39,11 +39,11 @@ const CookiesBanner = () => {
   if (!showBanner) return null;
 
   return (
-    <div className="z-50 flex justify-center	">
+    <div className="z-50 flex justify-center">
       <div className="fixed bottom-4 w-[87.5%] rounded bg-neutral-200 p-4 shadow-lg dark:bg-neutral-800 dark:shadow-[0px_10px_15px_-3_rgba(255,255,255,0.1),0px_4px_6px_-4px_rgba(255,255,255,0.1)] lg:w-[87.87%]">
-        <div className="flex flex-col items-center gap-4 lg:flex-row">
-          <div className="flex flex-col items-center gap-2 text-center lg:flex-row lg:text-start">
-            <Cookie className="h-10 w-10 lg:h-6 lg:w-6" />
+        <div className="flex flex-col items-center justify-between gap-4 lg:flex-row">
+          <div className="flex flex-col items-center gap-2 text-center font-montserrat lg:flex-row lg:text-start">
+            <Cookie className="h-10 w-10" />
             <div>
               <span className="font-bold">{t("we_use_cookies")}</span>{" "}
               {t("essential_cookies_text")}{" "}
@@ -53,20 +53,17 @@ const CookiesBanner = () => {
             </div>
           </div>
           <div className="flex gap-2">
-            <div>
-              <Button variant="contained" onClick={handleAcceptAll}>
-                {t("accept_all")}
-              </Button>
-            </div>
-            <div>
-              <Button
-                variant="contained"
-                color="secondary"
-                onClick={handleDeclineOptional}
-              >
-                {t("decline_optional")}
-              </Button>
-            </div>
+            <Button variant="contained" onClick={handleAcceptAll}>
+              {t("accept_all")}
+            </Button>
+
+            <Button
+              variant="contained"
+              color="secondary"
+              onClick={handleDeclineOptional}
+            >
+              {t("decline_optional")}
+            </Button>
           </div>
         </div>
       </div>
