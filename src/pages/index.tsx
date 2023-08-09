@@ -17,6 +17,7 @@ import SectionTitle from "~/components/SectionTitle/SectionTitle";
 import StepCard from "~/components/Cards/StepCard/StepCard";
 import FeatureCard from "~/components/Cards/FeatureCard/FeatureCard";
 import Footer from "~/components/Footer/Footer";
+import CookiesBanner from "~/components/CookiesBanner/CookiesBanner";
 
 const Home: NextPage = () => {
   const { t } = useTranslation("common");
@@ -62,6 +63,7 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <Navbar />
+        <CookiesBanner />
         <section className="flex flex-col items-center justify-center gap-8 px-6 py-10 text-center lg:min-h-screen lg:flex-row lg:items-start lg:justify-between lg:px-24 lg:py-32 lg:text-left">
           <div className="flex flex-col gap-6 lg:gap-10">
             <div className="flex flex-col gap-4 lg:text-lg">
