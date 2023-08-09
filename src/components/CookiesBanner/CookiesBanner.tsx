@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { hasCookie, setCookie } from "cookies-next";
@@ -18,11 +19,21 @@ const CookiesBanner = () => {
   const handleAcceptAll = () => {
     setCookie("cookieConsent", "all", { maxAge: 60 * 60 * 24 * 365 });
     setShowBanner(false);
+    updateAnalyticsStorage("granted");
   };
 
   const handleDeclineOptional = () => {
     setCookie("cookieConsent", "essential", { maxAge: 60 * 60 * 24 * 365 });
     setShowBanner(false);
+    updateAnalyticsStorage("denied");
+  };
+
+  const updateAnalyticsStorage = (newValue: "granted" | "denied") => {
+    window.gtag("consent", "update", {
+      analytics_storage: newValue,
+    });
+    // For Testing
+    console.log("Cookie Consent: ", newValue);
   };
 
   if (!showBanner) return null;
