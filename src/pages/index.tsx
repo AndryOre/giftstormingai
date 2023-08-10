@@ -62,7 +62,7 @@ const Home: NextPage = () => {
         />
       </Head>
       <main>
-        <Navbar />
+        <Navbar layoutType="guestUser" />
         <CookiesBanner />
         <section className="flex flex-col items-center justify-center gap-8 px-6 py-10 text-center lg:min-h-screen lg:flex-row lg:items-start lg:justify-between lg:px-24 lg:py-32 lg:text-left">
           <div className="flex flex-col gap-6 lg:gap-10">
