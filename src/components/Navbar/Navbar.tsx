@@ -190,13 +190,7 @@ function Navbar({ layoutType }: NavbarProps) {
     case "legalCenter":
       content = (
         <nav className="sticky top-0 z-50">
-          <div
-            className={`flex items-center justify-between px-5 py-4 lg:px-24 lg:py-8 ${
-              isMenuOpen
-                ? "bg-neutral-50 dark:bg-neutral-950"
-                : "bg-neutral-50 bg-opacity-50 backdrop-blur-sm dark:bg-neutral-950 dark:bg-opacity-50"
-            }`}
-          >
+          <div className="flex items-center justify-between bg-neutral-50 bg-opacity-50 px-5 py-4 backdrop-blur-sm dark:bg-neutral-950 dark:bg-opacity-50 lg:px-24 lg:py-8">
             <div className="font-montserrat text-xl font-bold lg:text-2xl">
               <span className="bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50">
                 Giftstorming {""}
@@ -205,47 +199,11 @@ function Navbar({ layoutType }: NavbarProps) {
                 Ai
               </span>
             </div>
-            <div className="flex gap-2 lg:hidden">
+            <div className="flex gap-2">
               <ThemeToggle />
               <LangDropdown />
             </div>
-            <div className="hidden items-center gap-4 lg:inline-flex">
-              <Link href="/">
-                <Button variant="text" size="sm">
-                  {t("back")}
-                </Button>
-              </Link>
-              <div className="flex gap-2">
-                <ThemeToggle />
-                <LangDropdown />
-              </div>
-            </div>
-            <button
-              onClick={handleMenuClick}
-              className="flex items-center justify-center lg:hidden"
-            >
-              {isMenuOpen ? (
-                <X
-                  size={24}
-                  className="text-neutral-800 dark:text-neutral-200"
-                />
-              ) : (
-                <List
-                  size={24}
-                  className="text-neutral-800 dark:text-neutral-200"
-                />
-              )}
-            </button>
           </div>
-          {isMenuOpen && (
-            <div className="fixed left-0 top-14 z-10 flex h-full w-full flex-col items-center justify-start gap-6 bg-neutral-50 px-5 py-4 font-lato dark:bg-neutral-950 lg:hidden">
-              <Link href="/">
-                <Button variant="text" size="sm">
-                  {t("back")}
-                </Button>
-              </Link>
-            </div>
-          )}
         </nav>
       );
       break;
