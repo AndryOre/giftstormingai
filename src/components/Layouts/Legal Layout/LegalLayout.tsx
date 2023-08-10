@@ -13,9 +13,11 @@ const LegalLayout = ({ children }: LegalLayoutProps) => {
       <Head>
         <title>Legal Center - Giftstorming Ai</title>
       </Head>
-      <Navbar layoutType="legalCenter" />
-      <main className="flex flex-col px-6 py-10 lg:px-24">{children}</main>
-      <Footer />
+      <div className="flex min-h-screen flex-col">
+        <Navbar layoutType="legalCenter" />
+        <main className="flex grow flex-col px-6 lg:px-24">{children}</main>
+        <Footer />
+      </div>
     </>
   );
 };
