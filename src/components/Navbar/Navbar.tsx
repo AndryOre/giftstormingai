@@ -67,12 +67,14 @@ function Navbar({ layoutType }: NavbarProps) {
             }`}
           >
             <div className="font-montserrat text-xl font-bold lg:text-2xl">
-              <span className="bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50">
-                Giftstorming {""}
-              </span>
-              <span className="bg-gradient-to-t from-red-500 to-red-500/50 bg-clip-text text-transparent dark:bg-gradient-to-b">
-                Ai
-              </span>
+              <Link href="/">
+                <span className="bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50">
+                  Giftstorming {""}
+                </span>
+                <span className="bg-gradient-to-t from-red-500 to-red-500/50 bg-clip-text text-transparent dark:bg-gradient-to-b">
+                  Ai
+                </span>
+              </Link>
             </div>
             <div className="hidden lg:flex lg:items-center lg:justify-between">
               <div className="flex justify-center gap-8">
@@ -192,12 +194,14 @@ function Navbar({ layoutType }: NavbarProps) {
         <nav className="sticky top-0 z-50">
           <div className="flex items-center justify-between bg-neutral-50 bg-opacity-50 px-5 py-4 backdrop-blur-sm dark:bg-neutral-950 dark:bg-opacity-50 lg:px-24 lg:py-8">
             <div className="font-montserrat text-xl font-bold lg:text-2xl">
-              <span className="bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50">
-                Giftstorming {""}
-              </span>
-              <span className="bg-gradient-to-t from-red-500 to-red-500/50 bg-clip-text text-transparent dark:bg-gradient-to-b">
-                Ai
-              </span>
+              <Link href="/">
+                <span className="bg-gradient-to-t from-neutral-950 to-neutral-950/50 bg-clip-text text-transparent dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-50/50">
+                  Giftstorming {""}
+                </span>
+                <span className="bg-gradient-to-t from-red-500 to-red-500/50 bg-clip-text text-transparent dark:bg-gradient-to-b">
+                  Ai
+                </span>
+              </Link>
             </div>
             <div className="flex gap-2">
               <ThemeToggle />
