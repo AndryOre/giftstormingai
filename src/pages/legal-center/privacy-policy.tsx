@@ -90,7 +90,9 @@ const PrivacyPolicy: NextPage = () => {
         </div>
         <div className="flex justify-end">
           <Button variant="text">
-            <Link href="/">{t("legal_center.back_to_home")}</Link>
+            <Link href="/legal-center">
+              {t("legal_center.back_to_legal_center")}
+            </Link>
           </Button>
         </div>
       </div>
