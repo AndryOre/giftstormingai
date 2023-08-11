@@ -48,7 +48,9 @@ const CookiesBanner = () => {
               <span className="font-bold">{t("we_use_cookies")}</span>{" "}
               {t("essential_cookies_text")}{" "}
               <span className="hover:text-neutral-800 hover:underline hover:dark:text-neutral-200">
-                <Link href="/cookies-policy">{t("learn_more")}</Link>
+                <Link href="/legal-center/cookies-policy">
+                  {t("learn_more")}
+                </Link>
               </span>
             </div>
           </div>
