@@ -70,7 +70,7 @@ function Button({
           : "bg-neutral-200 text-neutral-300 cursor-not-allowed"
         : color === "primary"
         ? "bg-red-500 text-neutral-50 hover:bg-red-700 focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 shadow dark:shadow-[0px_1px_3px_rgba(255,255,255,0.1),0px_1px_2px_-1px_rgba(255,255,255,0.1)]"
-        : "bg-neutral-50 text-red-500 hover:bg-neutral-200 focus:ring-2 focus:ring-neutral-50 focus:ring-opacity-50 shadow dark:shadow-[0px_1px_3px_rgba(255,255,255,0.1),0px_1px_2px_-1px_rgba(255,255,255,0.1)]";
+        : "bg-neutral-50 text-red-500 hover:bg-neutral-200 focus:ring-2 focus:ring-neutral-50 focus:ring-opacity-50 shadow-md";
   }
 
   return (
