@@ -19,6 +19,8 @@
     "@trpc/next": "^10.26.0",
     "@trpc/react-query": "^10.26.0",
     "@trpc/server": "^10.26.0",
+    "client-only": "^0.0.1",
+    "cookies-next": "^2.1.2",
     "i18next": "^23.2.7",
     "next": "^13.4.2",
     "next-auth": "^4.22.1",
@@ -32,6 +34,7 @@
   },
   "devDependencies": {
     "@types/eslint": "^8.37.0",
+    "@types/gtag.js": "^0.0.12",
     "@types/node": "^18.16.0",
     "@types/prettier": "^2.7.2",
     "@types/react": "^18.2.6",
