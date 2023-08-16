@@ -110,45 +110,48 @@ function Navbar({ layoutType }: NavbarProps) {
                 </a>
               </div>
             </div>
-            <div className="flex gap-2 lg:hidden">
-              <ThemeToggle />
-              <LangDropdown />
-            </div>
-            <div className="hidden items-center gap-4 lg:inline-flex">
-              <Button
-                variant="contained"
-                size="md"
-                onClick={() =>
-                  window.open(
-                    "https://giftstorming-ai.beehiiv.com/subscribe",
-                    "_blank"
-                  )
-                }
-              >
-                {t("get_early_access")}
-              </Button>
-              <div className="flex gap-2">
+            <div className="flex items-center gap-4">
+              <div className="flex gap-2 lg:hidden">
                 <ThemeToggle />
                 <LangDropdown />
               </div>
+              <div className="hidden items-center gap-4 lg:inline-flex">
+                <Button
+                  variant="contained"
+                  size="md"
+                  onClick={() =>
+                    window.open(
+                      "https://giftstorming-ai.beehiiv.com/subscribe",
+                      "_blank"
+                    )
+                  }
+                >
+                  {t("get_early_access")}
+                </Button>
+                <div className="flex gap-2">
+                  <ThemeToggle />
+                  <LangDropdown />
+                </div>
+              </div>
+              <button
+                onClick={handleMenuClick}
+                className="flex items-center justify-center lg:hidden"
+              >
+                {isMenuOpen ? (
+                  <X
+                    size={24}
+                    className="text-neutral-800 dark:text-neutral-200"
+                  />
+                ) : (
+                  <List
+                    size={24}
+                    className="text-neutral-800 dark:text-neutral-200"
+                  />
+                )}
+              </button>
             </div>
-            <button
-              onClick={handleMenuClick}
-              className="flex items-center justify-center lg:hidden"
-            >
-              {isMenuOpen ? (
-                <X
-                  size={24}
-                  className="text-neutral-800 dark:text-neutral-200"
-                />
-              ) : (
-                <List
-                  size={24}
-                  className="text-neutral-800 dark:text-neutral-200"
-                />
-              )}
-            </button>
           </div>
+
           {isMenuOpen && (
             <div className="fixed left-0 top-14 z-10 flex h-full w-full flex-col items-center justify-start gap-6 bg-neutral-50 px-5 py-4 font-lato dark:bg-neutral-950 lg:hidden">
               <a
