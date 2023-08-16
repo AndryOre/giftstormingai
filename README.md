@@ -1,28 +1,51 @@
-# Create T3 App
+# Giftstorming AI 🎁
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+**Giftstorming AI** is an AI-powered tool that helps you discover the perfect gift for any occasion.
 
-## What's next? How do I make an app with this?
+![Giftstorming Ai Thumbnail](https://res.cloudinary.com/dhwxnbnaj/image/upload/v1691210624/Giftstorming_Ai_Thumbnail_fftdav.png)
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## Description 📝
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+Ever felt overwhelmed when searching for the perfect gift? **Giftstorming AI** leverages artificial intelligence to provide you with personalized gift suggestions based on the unique details you provide. Whether it's for a birthday, anniversary, or any other special occasion, we've got you covered.
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+## Features ✨
 
-## Learn More
+- **User-Friendly Interface:** Our interface is easy to use, making the search for the perfect gift a breeze.
+- **Tailored for You:** Based on the details you provide, our AI crafts a personalized list of gift ideas.
+- **Multilingual:** Whether you're more comfortable in English or Spanish, we've got you covered.
+- **Light and Dark Themes:** Choose between our light and dark themes for the perfect browsing experience.
+- **Bookmark Your Favorites:** Add gifts to your favorites and come back to them anytime.
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+## How to Use 🤔
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+1. **Tell Us About the Gift:** Who's the lucky one? What's the occasion? What's your budget? Give us some details to start the magic.
+2. **Hit the Magic Button:** Done with the details? Great! Now just hit the magic button and let us do the heavy lifting.
+3. **Get Your Personalized Gift Ideas:** Voila! Here's your personalized list of gift ideas, crafted just for you.
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+## Built With 🛠️
 
-## How do I deploy this?
+- [![NextJS][NextJS]][NextJS-url]
+- [![TypeScript][TypeScript]][TypeScript-url]
+- [![tRPC][tRPC]][tRPC-url]
+- [![Prisma][Prisma]][Prisma-url]
+- [![TailwindCSS][TailwindCSS]][TailwindCSS-url]
+- [NextAuthJS][NextAuthJS-url]
+- [![i18next][i18next]][i18next-url]
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+## License 📜
+
+This project is licensed under the MIT License. See [LICENSE](https://github.com/AndryOre/giftstormingai/blob/main/LICENSE) for more information.
+
+[NextJS]: https://img.shields.io/badge/Next.js-000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white
+[NextJS-url]: https://nextjs.org/
+[TypeScript]: https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white
+[TypeScript-url]: https://www.typescriptlang.org/
+[tRPC]: https://img.shields.io/badge/tRPC-2596BE.svg?style=for-the-badge&logo=tRPC&logoColor=white
+[tRPC-url]: https://trpc.io/
+[Prisma]: https://img.shields.io/badge/Prisma-2D3748.svg?style=for-the-badge&logo=Prisma&logoColor=white
+[Prisma-url]: https://www.prisma.io/
+[TailwindCSS]: https://img.shields.io/badge/Tailwind%20CSS-06B6D4.svg?style=for-the-badge&logo=Tailwind-CSS&logoColor=white
+[TailwindCSS-url]: https://tailwindcss.com/
+[NextAuthJS-url]: https://next-auth.js.org/
+[i18next]: https://img.shields.io/badge/i18next-26A69A.svg?style=for-the-badge&logo=i18next&logoColor=white
+[i18next-url]: https://github.com/i18next/next-i18next
