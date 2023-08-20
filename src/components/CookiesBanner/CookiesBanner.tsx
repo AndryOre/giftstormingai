@@ -13,12 +13,21 @@ const CookiesBanner = () => {
 
   useEffect(() => {
     const consent = hasCookie("cookieConsent");
+    if (!consent) {
+      updateAnalyticsStorage("granted");
+    }
     setShowBanner(!consent);
   }, []);
 
   const handleOkay = () => {
     setCookie("cookieConsent", "okay", { maxAge: 60 * 60 * 24 * 365 });
     setShowBanner(false);
+  };
+
+  const updateAnalyticsStorage = (newValue: "granted" | "denied") => {
+    window.gtag("consent", "update", {
+      analytics_storage: newValue,
+    });
   };
 
   if (!showBanner) return null;
