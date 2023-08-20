@@ -16,11 +16,31 @@ import SectionTitle from "~/components/SectionTitle/SectionTitle";
 import StepCard from "~/components/Cards/StepCard/StepCard";
 import FeatureCard from "~/components/Cards/FeatureCard/FeatureCard";
 import CookiesBanner from "~/components/CookiesBanner/CookiesBanner";
+import { MixpanelTracking } from "~/components/Analytics/Mixpanel/Mixpanel";
+import type { IMixpanelTracking } from "~/components/Analytics/Mixpanel/Mixpanel";
 
 const Home: NextPage = () => {
   const { t } = useTranslation("common");
 
   const [email, setEmail] = useState("");
+
+  const handleGetEarlyAccessHero = () => {
+    const mixpanelInstance: IMixpanelTracking = MixpanelTracking.getInstance();
+    mixpanelInstance.buttonClicked("getEarlyAccessButtonHero");
+
+    window.open(
+      `https://magic.beehiiv.com/v1/2ccc515f-1bc0-4eb2-9e0a-c8e714a8cbc8?email=${email}&redirect_to=https://giftstorming-ai.vercel.app/&utm_source=landing&utm_medium=hero&utm_campaign=early_access`,
+      "_blank"
+    );
+  };
+
+  const handleGetEarlyAccessBanner = () => {
+    const mixpanelInstance: IMixpanelTracking = MixpanelTracking.getInstance();
+    mixpanelInstance.buttonClicked("getEarlyAccessButtonBanner");
+
+    window.open("https://giftstorming-ai.beehiiv.com/subscribe", "_blank");
+  };
+
   return (
     <MainLayout>
       <CookiesBanner />
@@ -57,12 +77,7 @@ const Home: NextPage = () => {
               />
             </div>
             <div className="xl:hidden">
-              <Button
-                variant="contained"
-                onClick={() =>
-                  (window.location.href = `https://magic.beehiiv.com/v1/2ccc515f-1bc0-4eb2-9e0a-c8e714a8cbc8?email=${email}&redirect_to=https://giftstorming-ai.vercel.app/&utm_source=landing&utm_medium=hero&utm_campaign=early_access`)
-                }
-              >
+              <Button variant="contained" onClick={handleGetEarlyAccessHero}>
                 {t("get_early_access")}
               </Button>
             </div>
@@ -70,9 +85,7 @@ const Home: NextPage = () => {
               <Button
                 variant="contained"
                 size="md"
-                onClick={() =>
-                  (window.location.href = `https://magic.beehiiv.com/v1/2ccc515f-1bc0-4eb2-9e0a-c8e714a8cbc8?email=${email}&redirect_to=https://giftstorming-ai.vercel.app/&utm_source=landing&utm_medium=hero&utm_campaign=early_access`)
-                }
+                onClick={handleGetEarlyAccessHero}
               >
                 {t("get_early_access")}
               </Button>
@@ -180,12 +193,7 @@ const Home: NextPage = () => {
             variant="contained"
             size="md"
             color="secondary"
-            onClick={() =>
-              window.open(
-                "https://giftstorming-ai.beehiiv.com/subscribe",
-                "_blank"
-              )
-            }
+            onClick={() => handleGetEarlyAccessBanner()}
           >
             {t("get_early_access")}
           </Button>

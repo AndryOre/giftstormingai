@@ -6,8 +6,8 @@ import "~/styles/globals.css";
 import { Montserrat, Lato } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { appWithTranslation } from "next-i18next";
-import GoogleAnalytics from "~/components/Analytics/GoogleAnalytics";
-import { env } from "~/env.mjs";
+import GoogleAnalytics from "~/components/Analytics/Google Analytics/GoogleAnalytics";
+import Mixpanel from "~/components/Analytics/Mixpanel/Mixpanel";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -36,6 +36,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
       </style>
       <ThemeProvider enableSystem={true} attribute="class">
         <GoogleAnalytics GA_MEASUREMENT_ID="G-EXEQ23QZ0T" />
+        <Mixpanel />
         <Component {...pageProps} />
       </ThemeProvider>
     </SessionProvider>
