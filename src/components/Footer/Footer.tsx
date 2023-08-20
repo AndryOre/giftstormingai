@@ -1,9 +1,22 @@
 import { Heart } from "@phosphor-icons/react";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
+import { MixpanelTracking } from "../Analytics/Mixpanel/Mixpanel";
+import type { IMixpanelTracking } from "../Analytics/Mixpanel/Mixpanel";
 
 export default function Footer() {
   const { t } = useTranslation("common");
+
+  const handleTwitterClick = () => {
+    const mixpanelInstance: IMixpanelTracking = MixpanelTracking.getInstance();
+    mixpanelInstance.socialClicked("twitter");
+  };
+
+  const handleGithubrClick = () => {
+    const mixpanelInstance: IMixpanelTracking = MixpanelTracking.getInstance();
+    mixpanelInstance.socialClicked("github");
+  };
+
   return (
     <footer className="flex flex-col gap-4 px-5 py-3 font-lato text-neutral-800 dark:text-neutral-200 lg:gap-2 lg:px-24 lg:py-6">
       <div className="flex flex-col justify-between gap-4 lg:flex-row lg:items-center">
@@ -24,6 +37,7 @@ export default function Footer() {
             target="_blank"
             rel="noreferrer"
             className="text-neutral-900 hover:text-red-500 dark:text-neutral-100 dark:hover:text-red-500"
+            onClick={handleGithubrClick}
           >
             Github
           </a>
@@ -51,6 +65,7 @@ export default function Footer() {
           target="_blank"
           rel="noreferrer"
           className="hover:text-red-500"
+          onClick={handleTwitterClick}
         >
           AndryOre
         </a>

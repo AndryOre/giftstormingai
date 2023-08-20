@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Translate } from "@phosphor-icons/react";
 import { useRouter } from "next/router";
+import { MixpanelTracking } from "../Analytics/Mixpanel/Mixpanel";
+import type { IMixpanelTracking } from "../Analytics/Mixpanel/Mixpanel";
 
 const LangDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,6 +15,9 @@ const LangDropdown = () => {
   const changeLanguage = (lang: string) => {
     void router.push(router.pathname, router.pathname, { locale: lang });
     setIsOpen(false);
+
+    const mixpanelInstance: IMixpanelTracking = MixpanelTracking.getInstance();
+    mixpanelInstance.langChanged(lang);
   };
 
   return (

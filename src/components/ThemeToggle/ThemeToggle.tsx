@@ -1,11 +1,16 @@
 import { useTheme } from "next-themes";
 import { Sun, Moon } from "@phosphor-icons/react";
+import { MixpanelTracking } from "../Analytics/Mixpanel/Mixpanel";
+import type { IMixpanelTracking } from "../Analytics/Mixpanel/Mixpanel";
 
 const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
 
   const handleToggle = () => {
-    setTheme(theme === "light" ? "dark" : "light");
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    const mixpanelInstance: IMixpanelTracking = MixpanelTracking.getInstance();
+    mixpanelInstance.themeChanged(newTheme);
   };
 
   return (
