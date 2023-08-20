@@ -5,6 +5,8 @@ import LangDropdown from "../LangDropdown/LangDropdown";
 import { List, X } from "@phosphor-icons/react";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
+import { MixpanelTracking } from "../Analytics/Mixpanel/Mixpanel";
+import type { IMixpanelTracking } from "../Analytics/Mixpanel/Mixpanel";
 
 type NavbarProps = {
   layoutType: "guestUser" | "legalCenter";
@@ -53,6 +55,13 @@ function Navbar({ layoutType }: NavbarProps) {
       document.body.style.overflow = "unset";
     };
   }, [isMenuOpen]);
+
+  const handleGetEarlyAccess = () => {
+    const mixpanelInstance: IMixpanelTracking = MixpanelTracking.getInstance();
+    mixpanelInstance.buttonClicked("getEarlyAccessButtonNavbar");
+
+    window.open("https://giftstorming-ai.beehiiv.com/subscribe", "_blank");
+  };
 
   let content;
   switch (layoutType) {
@@ -110,45 +119,41 @@ function Navbar({ layoutType }: NavbarProps) {
                 </a>
               </div>
             </div>
-            <div className="flex gap-2 lg:hidden">
-              <ThemeToggle />
-              <LangDropdown />
-            </div>
-            <div className="hidden items-center gap-4 lg:inline-flex">
-              <Button
-                variant="contained"
-                size="md"
-                onClick={() =>
-                  window.open(
-                    "https://giftstorming-ai.beehiiv.com/subscribe",
-                    "_blank"
-                  )
-                }
-              >
-                {t("get_early_access")}
-              </Button>
-              <div className="flex gap-2">
-                <ThemeToggle />
-                <LangDropdown />
+            <div className="flex items-center gap-4">
+              <div className="inline-flex items-center gap-4">
+                <div className="hidden lg:inline-flex">
+                  <Button
+                    variant="contained"
+                    size="md"
+                    onClick={() => handleGetEarlyAccess()}
+                  >
+                    {t("get_early_access")}
+                  </Button>
+                </div>
+                <div className="flex gap-2">
+                  <ThemeToggle />
+                  <LangDropdown />
+                </div>
               </div>
+              <button
+                onClick={handleMenuClick}
+                className="flex items-center justify-center lg:hidden"
+              >
+                {isMenuOpen ? (
+                  <X
+                    size={24}
+                    className="text-neutral-800 dark:text-neutral-200"
+                  />
+                ) : (
+                  <List
+                    size={24}
+                    className="text-neutral-800 dark:text-neutral-200"
+                  />
+                )}
+              </button>
             </div>
-            <button
-              onClick={handleMenuClick}
-              className="flex items-center justify-center lg:hidden"
-            >
-              {isMenuOpen ? (
-                <X
-                  size={24}
-                  className="text-neutral-800 dark:text-neutral-200"
-                />
-              ) : (
-                <List
-                  size={24}
-                  className="text-neutral-800 dark:text-neutral-200"
-                />
-              )}
-            </button>
           </div>
+
           {isMenuOpen && (
             <div className="fixed left-0 top-14 z-10 flex h-full w-full flex-col items-center justify-start gap-6 bg-neutral-50 px-5 py-4 font-lato dark:bg-neutral-950 lg:hidden">
               <a
@@ -175,12 +180,7 @@ function Navbar({ layoutType }: NavbarProps) {
                 variant="contained"
                 size="lg"
                 fullWidth
-                onClick={() =>
-                  window.open(
-                    "https://giftstorming-ai.beehiiv.com/subscribe",
-                    "_blank"
-                  )
-                }
+                onClick={() => handleGetEarlyAccess()}
               >
                 {t("get_early_access")}
               </Button>
