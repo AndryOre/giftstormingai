@@ -18,7 +18,7 @@ class MixpanelTracking implements IMixpanelTracking {
   }
 
   private constructor() {
-    mixpanel.init("7f7f49fd184bdcc76cae2fbd506cbf71" || "", {
+    mixpanel.init("7b3f436a08fedb21b8b0ad0e91e390ae" || "", {
       debug: true,
       ignore_dnt: true,
     });

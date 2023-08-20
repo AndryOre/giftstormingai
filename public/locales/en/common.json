@@ -38,11 +38,9 @@
   "storm_of_gift_ideas": "A storm of personalized gift ideas at your fingertips",
   "enter_email": "Enter your email",
   "we_use_cookies": "We Use Cookies!",
-  "essential_cookies_text": "Essential cookies are used for service functionality, and optional cookies to enhance your experience and analyze site traffic.",
+  "we_use_cookies_desc": "We use cookies for service functionality and to enhance your experience.",
   "learn_more": "Learn More",
-  "accept_all": "Accept All",
-  "decline_optional": "Decline Optional",
-  "back": "Back",
+  "okay_cookies": "Okay",
   "legal_center": {
     "title": "Legal Center - Giftstorming Ai",
     "intro": "At Giftstorming Ai, we are committed to transparency and the security of our users. Below you will find links to our legal documents that describe the practices and policies we govern.",

@@ -35,7 +35,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
         `}
       </style>
       <ThemeProvider enableSystem={true} attribute="class">
-        <GoogleAnalytics GA_MEASUREMENT_ID="G-EXEQ23QZ0T" />
+        <GoogleAnalytics GA_MEASUREMENT_ID="G-D0WXYWVDME" />
         <Mixpanel />
         <Component {...pageProps} />
       </ThemeProvider>
