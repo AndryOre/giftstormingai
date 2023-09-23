@@ -18,20 +18,27 @@ import FeatureCard from "~/components/Cards/FeatureCard/FeatureCard";
 import CookiesBanner from "~/components/CookiesBanner/CookiesBanner";
 import { MixpanelTracking } from "~/components/Analytics/Mixpanel/Mixpanel";
 import type { IMixpanelTracking } from "~/components/Analytics/Mixpanel/Mixpanel";
+import { api } from "~/utils/api";
 
 const Home: NextPage = () => {
   const { t } = useTranslation("common");
 
   const [email, setEmail] = useState("");
 
+  const subscribe = api.mailerLite.subscribe.useMutation();
+
   const handleGetEarlyAccessHero = () => {
     const mixpanelInstance: IMixpanelTracking = MixpanelTracking.getInstance();
     mixpanelInstance.buttonClicked("getEarlyAccessButtonHero");
 
-    window.open(
-      `https://magic.beehiiv.com/v1/2ccc515f-1bc0-4eb2-9e0a-c8e714a8cbc8?email=${email}&redirect_to=https://giftstorming-ai.vercel.app/&utm_source=landing&utm_medium=hero&utm_campaign=early_access`,
-      "_blank"
-    );
+    subscribe
+      .mutateAsync({ email })
+      .then(() => {
+        alert(t("successSubscripted"));
+      })
+      .catch((error) => {
+        alert(t("errorSubscripted"));
+      });
   };
 
   const handleGetEarlyAccessBanner = () => {
@@ -189,14 +196,24 @@ const Home: NextPage = () => {
             <span>{t("ready_to_find_gift")}</span>
             <span>{t("start_now")}</span>
           </div>
-          <Button
-            variant="contained"
-            size="md"
-            color="secondary"
-            onClick={() => handleGetEarlyAccessBanner()}
-          >
-            {t("get_early_access")}
-          </Button>
+          <div className="flex flex-col items-center gap-4 lg:flex-row">
+            <div className="w-full lg:w-auto">
+              <Input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder={t("enter_email")}
+              />
+            </div>
+            <Button
+              variant="contained"
+              size="md"
+              color="secondary"
+              onClick={() => handleGetEarlyAccessBanner()}
+            >
+              {t("get_early_access")}
+            </Button>
+          </div>
         </div>
       </section>
     </MainLayout>
