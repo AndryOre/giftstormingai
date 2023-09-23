@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Button from "../Button/Button";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import LangDropdown from "../LangDropdown/LangDropdown";
 import { List, X } from "@phosphor-icons/react";
@@ -120,20 +119,9 @@ function Navbar({ layoutType }: NavbarProps) {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="inline-flex items-center gap-4">
-                <div className="hidden lg:inline-flex">
-                  <Button
-                    variant="contained"
-                    size="md"
-                    onClick={() => handleGetEarlyAccess()}
-                  >
-                    {t("get_early_access")}
-                  </Button>
-                </div>
-                <div className="flex gap-2">
-                  <ThemeToggle />
-                  <LangDropdown />
-                </div>
+              <div className="inline-flex items-center gap-2">
+                <ThemeToggle />
+                <LangDropdown />
               </div>
               <button
                 onClick={handleMenuClick}
@@ -176,14 +164,6 @@ function Navbar({ layoutType }: NavbarProps) {
               >
                 {t("features")}
               </a>
-              <Button
-                variant="contained"
-                size="lg"
-                fullWidth
-                onClick={() => handleGetEarlyAccess()}
-              >
-                {t("get_early_access")}
-              </Button>
             </div>
           )}
         </nav>
